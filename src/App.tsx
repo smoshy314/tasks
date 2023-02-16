@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "react-bootstrap";
+import { Button, Col, Container, Row } from "react-bootstrap";
 import "./App.css";
 import chicken from "./chicken.png";
 
@@ -22,6 +22,20 @@ function App(): JSX.Element {
             <Button onClick={() => console.log("Hello World!")}>
                 Log Hello World
             </Button>
+            <Container>
+                <Row>
+                    <Col>
+                        Chickens are cool which is why there is a chicken at the
+                        start and in the second column.
+                        <br></br>
+                        <br></br>
+                        proof that this is a column cuz other text is one line
+                    </Col>
+                    <Col>
+                        <img src={chicken} alt="CHICKEN" />
+                    </Col>
+                </Row>
+            </Container>
             <p>
                 Edit <code>src/App.tsx</code> and save. This page will
                 automatically reload. Hello World
