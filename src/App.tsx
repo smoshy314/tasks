@@ -25,14 +25,24 @@ function App(): JSX.Element {
             <Container>
                 <Row>
                     <Col>
-                        Chickens are cool which is why there is a chicken at the
-                        start and in the second column.
-                        <br></br>
-                        <br></br>
-                        proof that this is a column cuz other text is one line
+                        <div
+                            style={{
+                                padding: "4px",
+                                width: 400,
+                                height: 600,
+                                backgroundColor: "red"
+                            }}
+                        ></div>
                     </Col>
                     <Col>
-                        <img src={chicken} alt="CHICKEN" />
+                        <div
+                            style={{
+                                padding: "4px",
+                                width: 400,
+                                height: 600,
+                                backgroundColor: "red"
+                            }}
+                        ></div>
                     </Col>
                 </Row>
             </Container>
