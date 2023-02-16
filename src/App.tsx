@@ -1,4 +1,5 @@
 import React from "react";
+import { Button } from "react-bootstrap";
 import "./App.css";
 import chicken from "./chicken.png";
 
@@ -18,6 +19,9 @@ function App(): JSX.Element {
                 <li>Maul</li>
                 <li>Yoda</li>
             </ul>
+            <Button onClick={() => console.log("Hello World!")}>
+                Log Hello World
+            </Button>
             <p>
                 Edit <code>src/App.tsx</code> and save. This page will
                 automatically reload. Hello World
