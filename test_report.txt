@@ -6,21 +6,26 @@ Browserslist: caniuse-lite is outdated. Please run:
   npx browserslist@latest --update-db
   Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
 PASS src/arrays.test.ts
+PASS src/objects.test.ts
 PASS src/HtmlCss.test.tsx
 PASS src/functions.test.ts
 PASS src/text.test.tsx
 PASS src/App.test.tsx
---------------|---------|----------|---------|---------|-------------------
-File          | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
---------------|---------|----------|---------|---------|-------------------
-All files     |    97.5 |    96.77 |     100 |   97.43 |                   
- App.tsx      |     100 |      100 |     100 |     100 |                   
- arrays.ts    |    98.3 |    95.23 |     100 |   98.24 | 94                
- functions.ts |   94.73 |      100 |     100 |   94.73 | 8                 
---------------|---------|----------|---------|---------|-------------------
+----------------|---------|----------|---------|---------|-------------------
+File            | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+----------------|---------|----------|---------|---------|-------------------
+All files       |   97.93 |    97.29 |     100 |   97.89 |                   
+ src            |   97.93 |    97.29 |     100 |   97.89 |                   
+  App.tsx       |     100 |      100 |     100 |     100 |                   
+  arrays.ts     |    98.3 |    95.23 |     100 |   98.24 | 94                
+  functions.ts  |   94.73 |      100 |     100 |   94.73 | 8                 
+  objects.ts    |     100 |      100 |     100 |     100 |                   
+ src/interfaces |       0 |        0 |       0 |       0 |                   
+  question.ts   |       0 |        0 |       0 |       0 |                   
+----------------|---------|----------|---------|---------|-------------------
 
-Test Suites: 5 passed, 5 total
-Tests:       23 passed, 23 total
+Test Suites: 6 passed, 6 total
+Tests:       33 passed, 33 total
 Snapshots:   0 total
-Time:        4.937 s
+Time:        4.155 s
 Ran all test suites.
