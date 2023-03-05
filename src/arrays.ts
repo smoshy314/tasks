@@ -151,6 +151,5 @@ export function injectPositive(values: number[]): number[] {
     const test2 = [copy3[firstPos]];
     const test3 = [sum];
     values = [...final, ...test2, ...test3, ...test];
-    console.log(values);
     return values;
 }
