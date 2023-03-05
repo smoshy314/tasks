@@ -1,4 +1,5 @@
 import Q from "q";
+import { Z_FILTERED } from "zlib";
 import { Answer } from "./interfaces/answer";
 import { Question, QuestionType } from "./interfaces/question";
 
@@ -67,7 +68,8 @@ export function getNames(questions: Question[]): string[] {
  */
 export function sumPoints(questions: Question[]): number {
     const sum = questions.reduce(
-        (currentTotal: number, question: Question) => currentTotal + question.points,
+        (currentTotal: number, question: Question) =>
+            currentTotal + question.points,
         0
     );
     return sum;
@@ -77,7 +79,15 @@ export function sumPoints(questions: Question[]): number {
  * Consumes an array of questions and returns the sum total of the PUBLISHED questions.
  */
 export function sumPublishedPoints(questions: Question[]): number {
-    return 0;
+    const filtered = questions.filter(
+        (question: Question): boolean => question.published
+    );
+    const sum = filtered.reduce(
+        (currentTotal: number, question: Question) =>
+            currentTotal + question.points,
+        0
+    );
+    return sum;
 }
 
 /***
