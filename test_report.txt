@@ -6,21 +6,6 @@ Browserslist: caniuse-lite is outdated. Please run:
   npx browserslist@latest --update-db
   Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
 PASS src/arrays.test.ts
-  ● Console
-
-    console.log
-      [
-        100, 199, 1, -5,
-        300,   7, 3
-      ]
-
-      at injectPositive (src/arrays.ts:154:13)
-
-    console.log
-      [ -100, 0, -200, 100, 200 ]
-
-      at injectPositive (src/arrays.ts:154:13)
-
 PASS src/HtmlCss.test.tsx
 PASS src/functions.test.ts
 PASS src/text.test.tsx
@@ -28,14 +13,14 @@ PASS src/App.test.tsx
 --------------|---------|----------|---------|---------|-------------------
 File          | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 --------------|---------|----------|---------|---------|-------------------
-All files     |   97.53 |    96.77 |     100 |   97.46 |                   
+All files     |    97.5 |    96.77 |     100 |   97.43 |                   
  App.tsx      |     100 |      100 |     100 |     100 |                   
- arrays.ts    |   98.33 |    95.23 |     100 |   98.27 | 94                
+ arrays.ts    |    98.3 |    95.23 |     100 |   98.24 | 94                
  functions.ts |   94.73 |      100 |     100 |   94.73 | 8                 
 --------------|---------|----------|---------|---------|-------------------
 
 Test Suites: 5 passed, 5 total
 Tests:       23 passed, 23 total
 Snapshots:   0 total
-Time:        3.737 s
+Time:        4.937 s
 Ran all test suites.
