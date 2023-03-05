@@ -19,7 +19,10 @@ export function getPublishedQuestions(questions: Question[]): Question[] {
  * `expected`, and an empty array for its `options`.
  */
 export function getNonEmptyQuestions(questions: Question[]): Question[] {
-    const newVar = questions.filter((question: Question): boolean => question.body.length > 0 || question.expected.length > 0);
+    const newVar = questions.filter(
+        (question: Question): boolean =>
+            question.body.length > 0 || question.expected.length > 0
+    );
     return newVar;
 }
 
@@ -31,7 +34,10 @@ export function findQuestion(
     questions: Question[],
     id: number
 ): Question | null {
-    return null;
+    const theQ = questions.findIndex(
+        (question: Question): boolean => question.id === id
+    );
+    return theQ === -1 ? null : questions[theQ];
 }
 
 /**
