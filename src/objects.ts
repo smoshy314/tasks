@@ -1,4 +1,3 @@
-import { pid } from "process";
 import { Question, QuestionType } from "./interfaces/question";
 
 /**
