@@ -76,7 +76,7 @@ export function sumPoints(questions: Question[]): number {
 }
 
 /***
- * Consumes an array of questions and returns the sum total of the PUBLISHED questions.
+ * Consumes an array of questions and returns the sum total of the PUBLISHED questions POINTS.
  */
 export function sumPublishedPoints(questions: Question[]): number {
     const filtered = questions.filter(
@@ -108,7 +108,15 @@ id,name,options,points,published
  * Check the unit tests for more examples!
  */
 export function toCSV(questions: Question[]): string {
-    return "";
+    //const newA = questions.map((question: Question): string =>  question.id + "," + question.name + "," + question.options + "," + question.points+ "," + question.published + "\n")
+    const newA = questions.map(
+        (question: Question): string =>
+            `${question.id},${question.name},${question.options.reduce(
+                (currentTotal: number) => currentTotal + 1,
+                0
+            )},${question.points},${question.published}`
+    );
+    return "id,name,options,points,published\n" + newA.join("\n");
 }
 
 /**
