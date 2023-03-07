@@ -299,7 +299,40 @@ export function editOption(
     targetOptionIndex: number,
     newOption: string
 ): Question[] {
-    return [];
+    const targetIdI = questions.findIndex(
+        (question: Question): boolean => question.id === targetId
+    );
+    const copyQuestions = questions.map(
+        (question: Question): Question => ({
+            id: question.id,
+            name: question.name,
+            body: question.body,
+            type: question.type,
+            options: [...question.options],
+            expected: question.expected,
+            points: question.points,
+            published: question.published
+        })
+    );
+    if (targetIdI >= 0) {
+        const copyO = [...questions[targetIdI].options];
+        targetOptionIndex === -1
+            ? copyO.splice(copyO.length, 0, newOption)
+            : copyO.splice(targetOptionIndex, 1, newOption);
+        copyQuestions.splice(targetIdI, 1, {
+            id: questions[targetIdI].id,
+            name: questions[targetIdI].name,
+            body: questions[targetIdI].body,
+            type: questions[targetIdI].type,
+            // I broke prettier/prettier it created an endless loop with indent errors
+            // eslint-disable-next-line prettier/prettier
+            options: copyO,
+            expected: questions[targetIdI].expected,
+            points: questions[targetIdI].points,
+            published: questions[targetIdI].published
+        });
+    }
+    return copyQuestions;
 }
 
 /***
