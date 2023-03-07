@@ -208,7 +208,34 @@ export function renameQuestionById(
     targetId: number,
     newName: string
 ): Question[] {
-    return [];
+    const targetIdI = questions.findIndex(
+        (question: Question): boolean => question.id === targetId
+    );
+    const copyQuestions = questions.map(
+        (question: Question): Question => ({
+            id: question.id,
+            name: question.name,
+            body: question.body,
+            type: question.type,
+            options: [...question.options],
+            expected: question.expected,
+            points: question.points,
+            published: question.published
+        })
+    );
+    if (targetIdI >= 0) {
+        copyQuestions.splice(targetIdI, 1, {
+            id: questions[targetIdI].id,
+            name: newName,
+            body: questions[targetIdI].body,
+            type: questions[targetIdI].type,
+            options: [...questions[targetIdI].options],
+            expected: questions[targetIdI].expected,
+            points: questions[targetIdI].points,
+            published: questions[targetIdI].published
+        });
+    }
+    return copyQuestions;
 }
 
 /***
