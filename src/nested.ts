@@ -2,7 +2,7 @@ import Q from "q";
 import { Z_FILTERED } from "zlib";
 import { Answer } from "./interfaces/answer";
 import { Question, QuestionType } from "./interfaces/question";
-import { makeBlankQuestion } from "./objects";
+import { duplicateQuestion, makeBlankQuestion } from "./objects";
 
 /**
  * Consumes an array of questions and returns a new array with only the questions
@@ -162,7 +162,7 @@ export function publishAll(questions: Question[]): Question[] {
  * are the same type. They can be any type, as long as they are all the SAME type.
  */
 export function sameType(questions: Question[]): boolean {
-    if (questions.length === 0){
+    if (questions.length === 0) {
         return true;
     }
     const firstType = questions[0].type;
@@ -346,5 +346,28 @@ export function duplicateQuestionInArray(
     targetId: number,
     newId: number
 ): Question[] {
-    return [];
+    const targetIdI = questions.findIndex(
+        (question: Question): boolean => question.id === targetId
+    );
+    const copyQuestions = questions.map(
+        (question: Question): Question => ({
+            id: question.id,
+            name: question.name,
+            body: question.body,
+            type: question.type,
+            options: [...question.options],
+            expected: question.expected,
+            points: question.points,
+            published: question.published
+        })
+    );
+
+    if (targetIdI >= 0) {
+        copyQuestions.splice(
+            targetIdI + 1,
+            0,
+            duplicateQuestion(newId, questions[targetIdI])
+        );
+    }
+    return copyQuestions;
 }
