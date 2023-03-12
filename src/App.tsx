@@ -1,6 +1,12 @@
 import React from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import "./App.css";
+import { ChangeType } from "./components/ChangeType";
+import { RevealAnswer } from "./components/RevealAnswer";
+import { StartAttempt } from "./components/StartAttempt";
+import { TwoDice } from "./components/TwoDice";
+import { CycleHoliday } from "./components/CycleHoliday";
+import { Counter } from "./components/Counter";
 import chicken from "./chicken.png";
 
 function App(): JSX.Element {
@@ -9,6 +15,7 @@ function App(): JSX.Element {
             <header className="App-header">
                 Joshua Martinez UD CISC275 with React Hooks and TypeScript
             </header>
+            <hr></hr>
             <h1>This is header text</h1>
             <img src={chicken} alt="CHICKEN" />
             <br></br>
@@ -46,10 +53,17 @@ function App(): JSX.Element {
                     </Col>
                 </Row>
             </Container>
-            <p>
-                Edit <code>src/App.tsx</code> and save. This page will
-                automatically reload. Hello World
-            </p>
+            <Counter></Counter>
+            <hr />
+            <RevealAnswer></RevealAnswer>
+            <hr />
+            <StartAttempt></StartAttempt>
+            <hr />
+            <TwoDice></TwoDice>
+            <hr />
+            <ChangeType></ChangeType>
+            <hr /> Hello World
+            <CycleHoliday></CycleHoliday>
         </div>
     );
 }
