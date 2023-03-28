@@ -4,7 +4,7 @@ import { Button, Form } from "react-bootstrap";
 export function GiveAttempts(): JSX.Element {
     const [attempts, setAttempts] = useState<number>(3);
     const [request, setRequest] = useState<string>("");
-    const newAttempts = parseInt(request) - 1 || 0;
+    const newAttempts = parseInt(request) || 0;
     /*
     function updateRequest(event: React.ChangeEvent<HTMLInputElement>) {
         setRequest(event.target.value);
