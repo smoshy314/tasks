@@ -71,7 +71,6 @@ const NEW_TRIVIA_QUESTION = {
 
 ////////////////////////////////////////////
 // Actual tests
-
 describe("Testing the Question[] functions", () => {
     //////////////////////////////////
     // getPublishedQuestions
